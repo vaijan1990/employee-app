@@ -1,10 +1,10 @@
 import { EmployeeSchema, EmployeesSchema } from './schemas'
 import type { Employee, EmployeeList } from '../types'
 
-const BASE_URL = 'http://dummy.restapiexample.com/api/v1'
+const BASE_URL = 'https://dummy.restapiexample.com/api/v1'
 
 export async function fetchEmployees(): Promise<EmployeeList> {
-  const response = await fetch(`${BASE_URL}/employees`,)
+  const response = await fetch(`${BASE_URL}/employees`)
 
   if (!response.ok) {
     throw new Error(`Failed to fetch employees: HTTP ${response.status}`)
@@ -15,7 +15,7 @@ export async function fetchEmployees(): Promise<EmployeeList> {
 }
 
 export async function fetchEmployee(id: number): Promise<Employee> {
-  const response = await fetch(`${BASE_URL}/employee/${id}`,)
+  const response = await fetch(`${BASE_URL}/employee/${id}`)
 
   if (!response.ok) {
     throw new Error(`Failed to fetch employee ${id}: HTTP ${response.status}`)
