@@ -18,12 +18,12 @@ function DetailSkeleton() {
   )
 }
 
-export default async function DetailPage({
+export default function DetailPage({
   params,
 }: {
-  params: Promise<{ id: string }>
+  params: { id: string }
 }) {
-  const { id } = await params
+  const { id } = params
 
   return (
     <main role="main" className="mx-auto max-w-sm px-4 py-10">

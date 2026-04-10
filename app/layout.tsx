@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { QueryProvider } from "@/lib/queryClient";
+import { Suspense } from "react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -66,10 +67,11 @@ export default function RootLayout({
             </div>
           </div>
         </header>
-
-        <QueryProvider>
-          <div className="flex-1" id="main-content">{children}</div>
-        </QueryProvider>
+        <Suspense fallback={null}>
+          <QueryProvider>
+            <div className="flex-1" id="main-content">{children}</div>
+          </QueryProvider>
+        </Suspense> 
 
         <footer className="border-t border-white/60 bg-white/50 py-4 text-center text-xs text-gray-400">
           © 2026 PeopleHub · Alla rättigheter förbehållna
