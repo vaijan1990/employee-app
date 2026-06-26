@@ -1,5 +1,5 @@
 {
-  "name": "my-employees-app",
+  "name": "employees-app",
   "version": "0.1.0",
   "description": "A modern employee registry web application built with Next.js",
   "private": true,
