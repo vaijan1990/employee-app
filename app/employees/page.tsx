@@ -1,3 +1,4 @@
+export const runtime = 'edge';
 import EmployeeGrid from './EmployeeGrid'
 
 export default function EmployeesPage() {
